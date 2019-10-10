@@ -17,8 +17,8 @@
 
 **Every individual in the RDF files:**
 
-- [ ] Has a label with the name of the individual
-- [ ] Has a type
+- [x] Has a label with the name of the individual
+- [x] Has a type
 
 **Every value in the RDF files:**
 
