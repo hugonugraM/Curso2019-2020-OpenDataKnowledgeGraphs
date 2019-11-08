@@ -1,4 +1,4 @@
-@prefix : <http://www.group03.org/saferoads/TrafficAccidentsontology#> .
+@prefix : <http://www.group03.org/saferoads/TrafficAccidentsontology> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
@@ -116,8 +116,7 @@
 
 ###  http://www.group03.org/saferoads/TrafficAccidentsontology#has_type_of_vehicle
 :has_type_of_vehicle rdf:type owl:ObjectProperty ;
-                     rdfs:domain :Accident ;
-                     rdfs:range :Type .
+                     rdfs:domain :Accident .
 
 
 ###  http://www.group03.org/saferoads/TrafficAccidentsontology#has_weather_condition
@@ -191,8 +190,7 @@
 
 
 ###  http://www.group03.org/saferoads/TrafficAccidentsontology#Class
-:Class rdf:type owl:Class ;
-       rdfs:subClassOf :Casualty .
+:Class rdf:type owl:Class .
 
 
 ###  http://www.group03.org/saferoads/TrafficAccidentsontology#Latitude
@@ -216,21 +214,15 @@
 
 
 ###  http://www.group03.org/saferoads/TrafficAccidentsontology#Severity
-:Severity rdf:type owl:Class ;
-          rdfs:subClassOf :Casualty .
+:Severity rdf:type owl:Class .
 
 
 ###  http://www.group03.org/saferoads/TrafficAccidentsontology#Street
 :Street rdf:type owl:Class .
 
 
-###  http://www.group03.org/saferoads/TrafficAccidentsontology#Type
-:Type rdf:type owl:Class ;
-      rdfs:subClassOf :Vehicle .
-
-
-###  http://www.group03.org/saferoads/TrafficAccidentsontology#Vehicle
-:Vehicle rdf:type owl:Class .
+###  http://www.group03.org/saferoads/TrafficAccidentsontology#Type_of_vehicle
+:Type_of_vehicle rdf:type owl:Class .
 
 
 ###  http://www.group03.org/saferoads/TrafficAccidentsontology#Weather_condition
@@ -242,8 +234,7 @@
 
 
 ###  http://www.group03.org/saferoads/TrafficAccidentsontology#sex
-:sex rdf:type owl:Class ;
-     rdfs:subClassOf :Casualty .
+:sex rdf:type owl:Class .
 
 
 ###  http://www.group03.org/saferoads/TrafficAccidentsontology#surface-condition
@@ -255,8 +246,8 @@
 #################################################################
 
 ###  http://www.group03.org/saferoads/TrafficAccidentsontology#Car
-:Car rdf:type owl:NamedIndividual ,
-              :Type .
+:Car rdf:type owl:NamedIndividual ;
+     owl:sameAs <http://www.group03.org/saferoads/TrafficAccidentsontology#Taxi/Private_hire_car> .
 
 
 ###  http://www.group03.org/saferoads/TrafficAccidentsontology#Driver_or_rider
@@ -290,13 +281,12 @@
 
 
 ###  http://www.group03.org/saferoads/TrafficAccidentsontology#Motorcycle
-:Motorcycle rdf:type owl:NamedIndividual ,
-                     :Type .
+:Motorcycle rdf:type owl:NamedIndividual ;
+            owl:sameAs :Pedal_cycleCar .
 
 
 ###  http://www.group03.org/saferoads/TrafficAccidentsontology#Pedal_cycleCar
-:Pedal_cycleCar rdf:type owl:NamedIndividual ,
-                         :Type .
+:Pedal_cycleCar rdf:type owl:NamedIndividual .
 
 
 ###  http://www.group03.org/saferoads/TrafficAccidentsontology#Pedestrian
@@ -370,8 +360,7 @@
 
 
 ###  http://www.group03.org/saferoads/TrafficAccidentsontology#Taxi/Private_hire_car
-<http://www.group03.org/saferoads/TrafficAccidentsontology#Taxi/Private_hire_car> rdf:type owl:NamedIndividual ,
-                                                                                           :Type .
+<http://www.group03.org/saferoads/TrafficAccidentsontology#Taxi/Private_hire_car> rdf:type owl:NamedIndividual .
 
 
 ###  http://www.group03.org/saferoads/TrafficAccidentsontology#Wet/Damp
