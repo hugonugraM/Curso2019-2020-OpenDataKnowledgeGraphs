@@ -13,11 +13,34 @@
 #    Object Properties
 #################################################################
 
+###  http://www.group03.org/saferoads/TrafficAccidentsontology#has_age
+:has_age rdf:type owl:ObjectProperty ;
+         rdfs:subPropertyOf :has_casualty ;
+         rdfs:domain :Casualty ;
+         rdfs:range [ rdf:type owl:Restriction ;
+                      owl:onProperty :age ;
+                      owl:someValuesFrom owl:rational
+                    ] .
+
+
 ###  http://www.group03.org/saferoads/TrafficAccidentsontology#has_casualty
 :has_casualty rdf:type owl:ObjectProperty ;
               rdfs:subPropertyOf owl:topObjectProperty ;
               rdfs:domain :Accident ;
               rdfs:range :Casualty .
+
+
+###  http://www.group03.org/saferoads/TrafficAccidentsontology#has_city
+:has_city rdf:type owl:ObjectProperty ;
+          rdfs:domain :Accident ;
+          rdfs:range :City .
+
+
+###  http://www.group03.org/saferoads/TrafficAccidentsontology#has_class
+:has_class rdf:type owl:ObjectProperty ;
+           rdfs:subPropertyOf :has_casualty ;
+           rdfs:domain :Casualty ;
+           rdfs:range :Class .
 
 
 ###  http://www.group03.org/saferoads/TrafficAccidentsontology#has_datetime
@@ -39,19 +62,69 @@
                  rdfs:range :environment .
 
 
-###  http://www.group03.org/saferoads/TrafficAccidentsontology#has_time
-:has_time rdf:type owl:ObjectProperty ;
-          rdfs:domain :Accident ;
-          rdfs:range [ rdf:type owl:Restriction ;
-                       owl:onProperty :time ;
-                       owl:someValuesFrom owl:rational
-                     ] .
+###  http://www.group03.org/saferoads/TrafficAccidentsontology#has_gender
+:has_gender rdf:type owl:ObjectProperty ;
+            rdfs:subPropertyOf :has_casualty ;
+            rdfs:domain :Casualty ;
+            rdfs:range :sex .
 
 
-###  http://www.group03.org/saferoads/TrafficAccidentsontology#involves_vehicle
-:involves_vehicle rdf:type owl:ObjectProperty ;
-                  rdfs:domain :Accident ;
-                  rdfs:range :Vehicle .
+###  http://www.group03.org/saferoads/TrafficAccidentsontology#has_latitude
+:has_latitude rdf:type owl:ObjectProperty ;
+              rdfs:domain :Accident ;
+              rdfs:range :Latitude .
+
+
+###  http://www.group03.org/saferoads/TrafficAccidentsontology#has_level_of_severity
+:has_level_of_severity rdf:type owl:ObjectProperty ;
+                       rdfs:subPropertyOf :has_casualty ;
+                       rdfs:domain :Casualty ;
+                       rdfs:range :Severity .
+
+
+###  http://www.group03.org/saferoads/TrafficAccidentsontology#has_lightining_condition
+:has_lightining_condition rdf:type owl:ObjectProperty ;
+                          rdfs:subPropertyOf :has_environment ;
+                          rdfs:domain :environment ;
+                          rdfs:range :Lighting_Conditions .
+
+
+###  http://www.group03.org/saferoads/TrafficAccidentsontology#has_longitude
+:has_longitude rdf:type owl:ObjectProperty ;
+               rdfs:domain :Accident ;
+               rdfs:range :Longitude .
+
+
+###  http://www.group03.org/saferoads/TrafficAccidentsontology#has_postal_code
+:has_postal_code rdf:type owl:ObjectProperty ;
+                 rdfs:domain :Accident ;
+                 rdfs:range :Postal_code .
+
+
+###  http://www.group03.org/saferoads/TrafficAccidentsontology#has_street
+:has_street rdf:type owl:ObjectProperty ;
+            rdfs:domain :Accident ;
+            rdfs:range :Street .
+
+
+###  http://www.group03.org/saferoads/TrafficAccidentsontology#has_surface_condition
+:has_surface_condition rdf:type owl:ObjectProperty ;
+                       rdfs:subPropertyOf :has_environment ;
+                       rdfs:domain :environment ;
+                       rdfs:range :surface-condition .
+
+
+###  http://www.group03.org/saferoads/TrafficAccidentsontology#has_type_of_vehicle
+:has_type_of_vehicle rdf:type owl:ObjectProperty ;
+                     rdfs:domain :Accident ;
+                     rdfs:range :Type .
+
+
+###  http://www.group03.org/saferoads/TrafficAccidentsontology#has_weather_condition
+:has_weather_condition rdf:type owl:ObjectProperty ;
+                       rdfs:subPropertyOf :has_environment ;
+                       rdfs:domain :environment ;
+                       rdfs:range :Weather_condition .
 
 
 #################################################################
@@ -113,13 +186,29 @@
 :Casualty rdf:type owl:Class .
 
 
+###  http://www.group03.org/saferoads/TrafficAccidentsontology#City
+:City rdf:type owl:Class .
+
+
 ###  http://www.group03.org/saferoads/TrafficAccidentsontology#Class
 :Class rdf:type owl:Class ;
        rdfs:subClassOf :Casualty .
 
 
+###  http://www.group03.org/saferoads/TrafficAccidentsontology#Latitude
+:Latitude rdf:type owl:Class .
+
+
 ###  http://www.group03.org/saferoads/TrafficAccidentsontology#Lighting_Conditions
 :Lighting_Conditions rdf:type owl:Class .
+
+
+###  http://www.group03.org/saferoads/TrafficAccidentsontology#Longitude
+:Longitude rdf:type owl:Class .
+
+
+###  http://www.group03.org/saferoads/TrafficAccidentsontology#Postal_code
+:Postal_code rdf:type owl:Class .
 
 
 ###  http://www.group03.org/saferoads/TrafficAccidentsontology#Road_profil
@@ -129,6 +218,10 @@
 ###  http://www.group03.org/saferoads/TrafficAccidentsontology#Severity
 :Severity rdf:type owl:Class ;
           rdfs:subClassOf :Casualty .
+
+
+###  http://www.group03.org/saferoads/TrafficAccidentsontology#Street
+:Street rdf:type owl:Class .
 
 
 ###  http://www.group03.org/saferoads/TrafficAccidentsontology#Type
